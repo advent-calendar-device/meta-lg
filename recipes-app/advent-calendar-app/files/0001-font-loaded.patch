@@ -1,0 +1,37 @@
+From e93a6b144eb9e03c2c3b3b95de153c72ac9ccb0c Mon Sep 17 00:00:00 2001
+From: "francesco.bambagioni" <francesco.bambagioni@engicam.com>
+Date: Sat, 4 Jul 2026 19:58:06 +0200
+Subject: [PATCH] font loaded
+
+---
+ main.cpp | 10 ++++++++++
+ 1 file changed, 10 insertions(+)
+
+diff --git a/main.cpp b/main.cpp
+index 4018c8a..c9f8b1f 100644
+--- a/main.cpp
++++ b/main.cpp
+@@ -1,6 +1,8 @@
+ #include <QGuiApplication>
+ #include <QQmlApplicationEngine>
+ #include <QQmlContext>
++#include <QFont>
++#include <QFontDatabase>
+ 
+ #include "backend/services/systemservices.h"
+ #include "backend/components/calendarcomponents.h"
+@@ -16,6 +18,14 @@ int main(int argc, char *argv[])
+         "Error: only enums"
+     );
+ 
++    int id = QFontDatabase::addApplicationFont("/usr/lib/fonts/OpenSans-Regular.ttf");
++    if (id == -1) {
++        qFatal("Impossibile caricare il font");
++    }
++
++    QString family = QFontDatabase::applicationFontFamilies(id).first();
++    QGuiApplication::setFont(QFont(family, 14));
++
+     QQmlApplicationEngine engine;
+ 
+     LetterContainer* letterContainer = new LetterContainer();

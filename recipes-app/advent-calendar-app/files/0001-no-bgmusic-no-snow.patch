@@ -1,0 +1,41 @@
+From 4a983270f6411ed4a6fd39dfbfaf8309a5c16d8a Mon Sep 17 00:00:00 2001
+From: "francesco.bambagioni" <francesco.bambagioni@engicam.com>
+Date: Tue, 12 May 2026 16:42:57 +0200
+Subject: [PATCH] no bgmusic no snow
+
+---
+ Main.qml | 14 +++++++-------
+ 1 file changed, 7 insertions(+), 7 deletions(-)
+
+diff --git a/Main.qml b/Main.qml
+index 7b91db3..37b36b0 100644
+--- a/Main.qml
++++ b/Main.qml
+@@ -19,10 +19,10 @@ Window {
+         source: "qrc:/images/three_snow.jpg"
+     }
+ 
+-    BgMusic{
+-        id: bgMusic
+-        timeToNext: 40000
+-    }
++//    BgMusic{
++//        id: bgMusic
++//        timeToNext: 40000
++//    }
+ 
+     Item {
+         anchors.top: parent.top
+@@ -37,9 +37,9 @@ Window {
+         }
+     }
+ 
+-    Snow {
+-        anchors.fill: parent
+-    }
++//    Snow {
++//        anchors.fill: parent
++//    }
+ 
+     Item {
+         anchors.fill: parent
