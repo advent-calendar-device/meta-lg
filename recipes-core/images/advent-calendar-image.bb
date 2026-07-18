@@ -28,5 +28,7 @@ IMAGE_INSTALL:append = " \
 
 IMAGE_INSTALL:append = " gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad"
 
+IMAGE_INSTALL:append = " alsa-utils"
+
 IMAGE_INSTALL:append = " advent-calendar-app advent-calendar-data ccf-network"
 
